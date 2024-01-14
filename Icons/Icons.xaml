@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks">
+    <!-- Menu Icons -->
+    <Icon:PackIconMaterialKind x:Key="payment">Cart</Icon:PackIconMaterialKind>
+    <Icon:PackIconMaterialKind x:Key="storage">PackageVariant</Icon:PackIconMaterialKind>
+    <Icon:PackIconMaterialKind x:Key="orders">ChartLine</Icon:PackIconMaterialKind>
+    <Icon:PackIconMaterialKind x:Key="options">WrenchOutline</Icon:PackIconMaterialKind>
+    <Icon:PackIconMaterialKind x:Key="logout">Logout</Icon:PackIconMaterialKind>
+    
+    <!--Button Icons-->
+    <Icon:PackIconMaterialKind x:Key="add">Plus</Icon:PackIconMaterialKind>
+    <Icon:PackIconMaterialKind x:Key="save">ContentSaveAll</Icon:PackIconMaterialKind>
+    <Icon:PackIconMaterialKind x:Key="cancel">Cancel</Icon:PackIconMaterialKind>
+    <Icon:PackIconMaterialKind x:Key="user">Human</Icon:PackIconMaterialKind>
+    
+    
+   <!-- Minimize Icon-->
+    <PathGeometry x:Key="minimize" Figures="M19 13H5a1 1 0 0 1 0-2h14a1 1 0 0 1 0 2z"/>
+
+    <Icon:PackIconMaterial x:Key="test" Kind="Human"/>
+
+</ResourceDictionary>

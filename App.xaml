@@ -1,0 +1,40 @@
+﻿<Application x:Class="AFPStore.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AFPStore"
+             xmlns:viewModel="clr-namespace:AFPStore.MVVM.ViewModel"
+             xmlns:view="clr-namespace:AFPStore.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/MenuButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/DataGridStyle.xaml"/>
+                <ResourceDictionary Source="Styles/TextBoxStyle.xaml"/>
+                <ResourceDictionary Source="Styles/OtherButtonStyle.xaml"/>
+                <ResourceDictionary Source="Themes/LightTheme.xaml"/>
+                <ResourceDictionary Source="Icons/Icons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
+            
+            
+            <!--Data templates-->
+            <DataTemplate DataType="{x:Type viewModel:SalesViewModel}">
+                <view:SalesView/>
+            </DataTemplate> 
+        
+            <DataTemplate DataType="{x:Type viewModel:StorageViewModel}">
+                <view:StorageView/>
+            </DataTemplate> 
+            
+            <DataTemplate DataType="{x:Type viewModel:OrdersViewModel}">
+                <view:OrdersView/>
+            </DataTemplate> 
+            
+            <DataTemplate DataType="{x:Type viewModel:OptionsViewModel}">
+                <view:OptionsView/>
+            </DataTemplate>
+            <!--Data templates-->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="AFPStore.MVVM.View.DialogViews.CustomMessageBoxWithOnlyOKView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AFPStore.MVVM.View.DialogViews"
+        mc:Ignorable="d"
+            Height="150" Width="300"
+    WindowStyle="None"
+    ResizeMode="NoResize"
+    Background="Transparent"
+    AllowsTransparency="True"
+    WindowStartupLocation="CenterScreen">
+    <Border CornerRadius="20" Background="#0F4C75" BorderBrush="{DynamicResource PrimaryGrayColor}" BorderThickness="4"
+        MouseDown="Border_MouseDown">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="TextBoxMessage"
+                   Margin="10 0"
+                   FontSize="16"
+                   Width="Auto"
+                   HorizontalAlignment="Center"
+                   TextWrapping="Wrap"
+                   Style="{DynamicResource ModernTextBlock}"/>
+            <Grid Grid.Row="1">
+                <Button Content="ОК" 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Style="{DynamicResource SolidButtonStyle}"
+                    Margin="10 0"
+                    Padding="5"
+                    Click="ButtonOK_Click"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

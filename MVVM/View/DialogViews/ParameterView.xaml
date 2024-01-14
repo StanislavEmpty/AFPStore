@@ -1,0 +1,61 @@
+﻿<Window x:Class="AFPStore.MVVM.View.DialogViews.ParameterView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AFPStore.MVVM.View.DialogViews"
+        mc:Ignorable="d"
+        Height="200" Width="450"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+    <Border CornerRadius="20" Background="#0F4C75" BorderBrush="{DynamicResource PrimaryGrayColor}" BorderThickness="4">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.6*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="5 20">
+                <TextBlock Text="Свойство"
+                           FontSize="18"
+                           Style="{DynamicResource ModernTextBlock}"/>
+                <TextBox x:Name="TbName"
+                         Style="{DynamicResource ModernTextBox}"/>
+            </StackPanel>
+            <StackPanel Margin="5 20" Grid.Column="1">
+                <TextBlock Text="Значение"
+                           FontSize="18"
+                           Style="{DynamicResource ModernTextBlock}"/>
+                <TextBox x:Name="TbValue"
+                         Style="{DynamicResource ModernTextBox}"/>
+            </StackPanel>
+            <Button Content="Сохранить" 
+                    Grid.Row="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Tag="{DynamicResource save}"
+                    Style="{DynamicResource IconTextButtonStyle}"
+                    Margin="10 0"
+                    Padding="5"
+                    Click="ButtonSave_Click"/>
+            <Button Content="Отмена" 
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Background="{DynamicResource ActionIconColor}"
+                    Tag="{DynamicResource cancel}"
+                    Style="{DynamicResource IconTextButtonStyle}"
+                    Margin="10 0"
+                    Padding="5"
+                    Click="ButtonCancel_Click"
+                    IsCancel="True"/>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,142 @@
+﻿<Window x:Class="AFPStore.MVVM.View.DialogViews.ProductView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AFPStore.MVVM.View.DialogViews"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" xmlns:main="clr-namespace:AFPStore.MVVM.Model.Main" d:DataContext="{d:DesignInstance Type=main:Stock}"
+        mc:Ignorable="d"
+        Height="500" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+    <Border CornerRadius="20" Background="#0F4C75" BorderBrush="{DynamicResource PrimaryGrayColor}" BorderThickness="4">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="1.8*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.15*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="10" HorizontalAlignment="Center">
+                <TextBlock Text="Наименование"
+                           FontSize="18"
+                           Margin="10 5"
+                           Style="{DynamicResource ModernTextBlock}"/>
+                <TextBox Margin="10 5" x:Name="TbName"
+                         HorizontalAlignment="Left"
+                          Text="{Binding Product.Name, Mode=TwoWay}"
+                         Style="{DynamicResource ModernTextBox}"/>
+                <TextBlock Text="Количество"
+                           FontSize="18"
+                           Margin="10 5"
+                           Style="{DynamicResource ModernTextBlock}"/>
+                <TextBox Margin="10 5" x:Name="TbQuantity"
+                         HorizontalAlignment="Left"
+                         Text="{Binding Quantity, Mode=TwoWay}"
+                         Style="{DynamicResource ModernTextBox}"/>
+                <TextBlock Text="Цена"
+                           FontSize="18"
+                           Margin="10 5"
+                           Style="{DynamicResource ModernTextBlock}"/>
+                <TextBox Margin="10 5" x:Name="TbPrice"
+                         HorizontalAlignment="Left"
+                         Text="{Binding Product.Price, Mode=TwoWay}"
+                         Style="{DynamicResource ModernTextBox}"/>
+
+                <TextBlock Text="Дата создания"
+                           FontSize="18"
+                           Margin="10 5"
+                           Style="{DynamicResource ModernTextBlock}"/>
+                <TextBox Margin="10 5"
+                         HorizontalAlignment="Left"
+                         Text="{Binding Product.CreateAt}"
+                         IsReadOnly="True"
+                         Style="{DynamicResource ModernTextBox}"/>
+            </StackPanel>
+            <Grid Margin="10" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <TextBlock Text="Особенности"
+                                FontSize="18"
+                                Margin="10 0"
+                                VerticalAlignment="Center"
+                                Style="{DynamicResource ModernTextBlock}"/>
+                    <Button Content="Создать" 
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Right"
+                            Tag="{DynamicResource add}"
+                            Style="{DynamicResource IconTextButtonStyle}"
+                            Margin="10 0"
+                            Padding="5"
+                            Click="ButtonAddParams_Click"/>
+                </Grid>
+                <DataGrid x:Name="ParamsDataGrid" Grid.Row="1"
+                           Style="{DynamicResource ModernDataGridStyle}"
+                           CellStyle="{DynamicResource ModernDataGridCellStyle}"
+                           ColumnHeaderStyle="{DynamicResource ModernDataGridColumnHeaderStyle}"
+                           RowStyle="{DynamicResource ModernDataGridRowStyle}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" 
+                             IsReadOnly="True" 
+                             Width="*"
+                             Binding="{Binding Key}"/>
+                        <DataGridTextColumn Header="Value" 
+                             IsReadOnly="True" 
+                             Width="*"
+                             Binding="{Binding Value}"/>
+                        <DataGridTemplateColumn Header=""
+                                 IsReadOnly="True"
+                                 CanUserResize="False" 
+                                 Width="Auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Button 
+                                                 Height="25" Width="25"
+                                                 Padding="0"
+                                                 Margin="5 0 0 0"
+                                                 HorizontalContentAlignment="Center"
+                                                 Style="{DynamicResource SolidButtonStyle}"
+                                                 Click="ButtonDelete_Click">
+                                            <Icon:PackIconMaterial Kind="DeleteOutline" Focusable="False"/>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Button Content="Сохранить" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Tag="{DynamicResource save}"
+                        Style="{DynamicResource IconTextButtonStyle}"
+                        Margin="10 0"
+                        Padding="5"
+                        Click="ButtonSave_Click"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Button Content="Отмена" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Background="{DynamicResource ActionIconColor}"
+                        Tag="{DynamicResource cancel}"
+                        Style="{DynamicResource IconTextButtonStyle}"
+                        Margin="10 0"
+                        Padding="5"
+                        Click="ButtonCancel_Click"
+                        IsCancel="True"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
