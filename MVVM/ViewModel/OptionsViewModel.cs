@@ -72,7 +72,7 @@ namespace AFPStore.MVVM.ViewModel
         {
             get
             {
-                return addUserProfileCommand ??= new RelayCommand((o) =>
+                return addUserProfileCommand ??= new RelayCommand(async (o) =>
                 {
                     User user = new() { Login = string.Empty, Password = string.Empty };
                     UserProfile profile = new() { FirstName = string.Empty, LastName = string.Empty, User = user };
@@ -81,10 +81,10 @@ namespace AFPStore.MVVM.ViewModel
                     {
                         using StoreDbContext db = new();
                         db.Users.Add(user);
-                        db.SaveChanges();
+                        await db.SaveChangesAsync();
                         profile.UserId = db.Entry(user).Entity.Id;
                         db.UserProfiles.Add(profile);
-                        db.SaveChanges();
+                        await db.SaveChangesAsync();
                         CustomMessageBoxWithOnlyOKView msg = new($"Создан новый пользователь {profile.LastName} {profile.FirstName}");
                         msg.ShowDialog();
                         UserProfiles = db.UserProfiles.Include(r => r.Role).Include(u => u.User).ToList();
@@ -97,7 +97,7 @@ namespace AFPStore.MVVM.ViewModel
         {
             get
             {
-                return addRoleCommand ??= new RelayCommand((o) =>
+                return addRoleCommand ??= new RelayCommand(async (o) =>
                 {
                     Role role = new() { Name = string.Empty };
                     RoleView dialog = new(role);
@@ -105,7 +105,7 @@ namespace AFPStore.MVVM.ViewModel
                     {
                         using StoreDbContext db = new();
                         db.Roles.Add(role);
-                        db.SaveChanges();
+                        await db.SaveChangesAsync();
                         CustomMessageBoxWithOnlyOKView msg = new($"Создана новая роль {role.Name}");
                         msg.ShowDialog();
                         Roles = db.Roles.ToList();
@@ -117,7 +117,7 @@ namespace AFPStore.MVVM.ViewModel
         {
             get
             {
-                return editUserProfileCommand ??= new RelayCommand((selectedItem) =>
+                return editUserProfileCommand ??= new RelayCommand(async (selectedItem) =>
                 {
                     // получаем выделенный объект
                     UserProfile? userProfile = selectedItem as UserProfile;
@@ -131,7 +131,7 @@ namespace AFPStore.MVVM.ViewModel
                         using StoreDbContext db = new();
                         db.Entry(userProfile).State = EntityState.Modified;
                         db.Entry(userProfile.User).State = EntityState.Modified;
-                        db.SaveChanges();
+                        await db.SaveChangesAsync();
                         UserProfiles = db.UserProfiles.Include(r => r.Role).Include(u => u.User).ToList();
                     }
                 });
@@ -141,7 +141,7 @@ namespace AFPStore.MVVM.ViewModel
         {
             get
             {
-                return editRoleCommand ??= new RelayCommand((selectedItem) =>
+                return editRoleCommand ??= new RelayCommand(async (selectedItem) =>
                 {
                     // получаем выделенный объект
                     Role? role = selectedItem as Role;
@@ -154,7 +154,7 @@ namespace AFPStore.MVVM.ViewModel
                     {
                         using StoreDbContext db = new();
                         db.Entry(role).State = EntityState.Modified;
-                        db.SaveChanges();
+                        await db.SaveChangesAsync();
                         Roles = db.Roles.ToList();
                         UserProfiles = db.UserProfiles.Include(r => r.Role).Include(u => u.User).ToList();
                     }
@@ -165,7 +165,7 @@ namespace AFPStore.MVVM.ViewModel
         {
             get
             {
-                return deleteUserProfileCommand ??= new RelayCommand((selectedItem) =>
+                return deleteUserProfileCommand ??= new RelayCommand(async (selectedItem) =>
                 {
                     using StoreDbContext db = new();
                     // получаем выделенный объект
@@ -176,7 +176,7 @@ namespace AFPStore.MVVM.ViewModel
                     {
                         db.Users.Remove(userProfile.User);
                         db.UserProfiles.Remove(userProfile);
-                        db.SaveChanges();
+                        await db.SaveChangesAsync();
                     }
                     UserProfiles = db.UserProfiles.Include(r => r.Role).Include(u => u.User).ToList();
                 });
@@ -186,7 +186,7 @@ namespace AFPStore.MVVM.ViewModel
         {
             get
             {
-                return deleteRoleCommand ??= new RelayCommand((selectedItem) =>
+                return deleteRoleCommand ??= new RelayCommand(async (selectedItem) =>
                 {
                     using StoreDbContext db = new();
                     // получаем выделенный объект
@@ -198,7 +198,7 @@ namespace AFPStore.MVVM.ViewModel
                         if(!db.UserProfiles.Where(o=>o.RoleId == role.Id).Any())
                         {
                             db.Roles.Remove(role);
-                            db.SaveChanges();
+                            await db.SaveChangesAsync();
                             Roles = db.Roles.ToList();
                             UserProfiles = db.UserProfiles.Include(r => r.Role).Include(u => u.User).ToList();
                         }

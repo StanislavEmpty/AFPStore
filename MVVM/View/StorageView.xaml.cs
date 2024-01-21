@@ -49,11 +49,11 @@ namespace AFPStore.MVVM.View
                 using StoreDbContext db = new();
                 if(searchBox.Text.Length > 0)
                 {
-                    viewModel.Stocks = db.Stocks.Include("Product").Where(o=> o.Product.Name.ToLower().Contains(searchBox.Text.ToLower())).ToList();
+                    viewModel.Stocks = db.Stocks.Include("Product").OrderBy(o => o.Product.Name).Where(o=> o.Product.Name.ToLower().Contains(searchBox.Text.ToLower())).ToList();
                 }
                 else
                 {
-                    viewModel.Stocks = db.Stocks.Include("Product").ToList();
+                    viewModel.Stocks = db.Stocks.Include("Product").OrderBy(o => o.Product.Name).ToList();
                 }
             }
         }

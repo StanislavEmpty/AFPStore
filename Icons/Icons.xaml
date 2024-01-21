@@ -11,13 +11,15 @@
     <!--Button Icons-->
     <Icon:PackIconMaterialKind x:Key="add">Plus</Icon:PackIconMaterialKind>
     <Icon:PackIconMaterialKind x:Key="save">ContentSaveAll</Icon:PackIconMaterialKind>
-    <Icon:PackIconMaterialKind x:Key="cancel">Cancel</Icon:PackIconMaterialKind>
+    <Icon:PackIconMaterialKind x:Key="cancel">Backburger</Icon:PackIconMaterialKind>
     <Icon:PackIconMaterialKind x:Key="user">Human</Icon:PackIconMaterialKind>
+    <Icon:PackIconMaterialKind x:Key="open">OpenInNew</Icon:PackIconMaterialKind>
+    <Icon:PackIconMaterialKind x:Key="buy">CartOutline</Icon:PackIconMaterialKind>
     
     
    <!-- Minimize Icon-->
     <PathGeometry x:Key="minimize" Figures="M19 13H5a1 1 0 0 1 0-2h14a1 1 0 0 1 0 2z"/>
 
-    <Icon:PackIconMaterial x:Key="test" Kind="Human"/>
+    <Icon:PackIconMaterial x:Key="test" Kind="CartOutline"/>
 
 </ResourceDictionary>

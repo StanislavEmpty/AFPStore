@@ -89,3 +89,5 @@ D:\Projects\AFPStore\obj\Debug\net7.0-windows\MVVM\View\SalesView.g.cs
 D:\Projects\AFPStore\obj\Debug\net7.0-windows\MVVM\View\SalesView.baml
 D:\Projects\AFPStore\obj\Debug\net7.0-windows\MVVM\View\OrdersView.g.cs
 D:\Projects\AFPStore\obj\Debug\net7.0-windows\MVVM\View\OrdersView.baml
+D:\Projects\AFPStore\obj\Debug\net7.0-windows\MVVM\View\DialogViews\CheckView.g.cs
+D:\Projects\AFPStore\obj\Debug\net7.0-windows\MVVM\View\DialogViews\CheckView.baml

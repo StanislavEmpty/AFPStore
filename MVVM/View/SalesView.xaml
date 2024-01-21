@@ -9,62 +9,93 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.DataContext>
+            <viewModel:SalesViewModel/>
+        </Grid.DataContext>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.1*"/>
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <!--Top panel-->
-        <Grid VerticalAlignment="Top">
+        <Grid VerticalAlignment="Top" Margin="10 0">
             <TextBlock Text="Рабочий стол кассира"
                        Style="{DynamicResource ModernTextBlock}"/>
-            
         </Grid>
         <!--Top panel-->
-        
-        <!--Secundary panel-->
-        <Grid Grid.Row="1">
-            <StackPanel VerticalAlignment="Center" 
-                        Orientation="Horizontal">
-                <Button Content="Новый чек" 
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Style="{DynamicResource SolidButtonStyle}"
-                        Margin="10 0"
-                        Padding="5"/>
-            </StackPanel>
-            <TextBox HorizontalAlignment="Right"
-                      Margin="0 0 10 0"
-                      Tag="Найти в продуктах..."
-                      Style="{DynamicResource ModernSearchTextBox}"
-                      TextChanged="SearchBox_TextChanged"/>
-        </Grid>
-        <!--Secundary panel-->
-        
+
         <!--Work panel-->
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
-                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="0.7*"/>
             </Grid.RowDefinitions>
             <!--Storage-->
             <StackPanel>
-                <TextBlock Text="Товары в наличии"
-                           FontSize="18"
-                           Style="{DynamicResource ModernTextBlock}"/>
+                <Grid>
+                    <TextBlock Text="Товары в наличии"
+                               FontSize="18"
+                               Style="{DynamicResource ModernTextBlock}"/>
+                    <TextBox HorizontalAlignment="Right"
+                      Margin="0 0 10 0"
+                      Tag="Найти в продуктах..."
+                      Style="{DynamicResource ModernSearchTextBox}"
+                      TextChanged="SearchBox_TextChangedAsync"/>
+                </Grid>
                 <DataGrid x:Name="ProdDataGrid"
                            Margin="10 20"
-                           SelectedItem="{Binding SelectedStock}"
+                           SelectedItem="{Binding SelectedStorageStock}"
                            Style="{DynamicResource ModernDataGridStyle}"
                            CellStyle="{DynamicResource ModernDataGridCellStyle}"
                            ColumnHeaderStyle="{DynamicResource ModernDataGridColumnHeaderStyle}"
                            RowStyle="{DynamicResource ModernDataGridRowStyle}"
-                           ItemsSource="{Binding Stocks, Mode=OneWay}">
-                    
+                           ItemsSource="{Binding StorageStocks, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Продукт" 
+                                                IsReadOnly="True" 
+                                                Width="*"
+                                                Binding="{Binding Product.Name}"/>
+                        <DataGridTextColumn Header="Доступно (шт)" 
+                                                IsReadOnly="True" 
+                                                Width="120"
+                                                Binding="{Binding Quantity}"/>
+                        <DataGridTextColumn Header="Цена" 
+                                                IsReadOnly="True" 
+                                                Width="85"
+                                                Binding="{Binding Product.Price}"/>
+                        <DataGridTemplateColumn Header=""
+                                                    IsReadOnly="True"
+                                                    CanUserResize="False" 
+                                                    Width="Auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Button 
+                                                Height="25" Width="25"
+                                                Padding="0"
+                                                Margin="5 0 0 0"
+                                                HorizontalContentAlignment="Center"
+                                                Style="{DynamicResource SolidButtonStyle}"
+                                                Click="ButtonAddToBacket_Click">
+                                            <Icon:PackIconMaterial Kind="PlusBox"/>
+                                        </Button>
+                                        <Button
+                                                Height="25" Width="25"
+                                                Padding="0"
+                                                Margin="5 0 0 0"
+                                                HorizontalContentAlignment="Center"
+                                                Style="{DynamicResource SolidButtonStyle}"
+                                                Click="ButtonShowProduct_Click">
+                                            <Icon:PackIconMaterial Kind="OpenInNew"/>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
             <!--Storage-->
-            
+
             <!--Backet-->
             <Border Grid.Row="1"
                     CornerRadius="10" 
@@ -72,21 +103,79 @@
                     BorderBrush="{DynamicResource SecundaryBackgroundColor}" 
                     BorderThickness="2"
                     Margin="0">
-                <StackPanel>
-                    <TextBlock Text="Корзина"
-                               FontSize="18"
-                               Style="{DynamicResource ModernTextBlock}"/>
-                    <DataGrid x:Name="BacketDataGrid"
-                               Margin="10 20"
-                               SelectedItem="{Binding SelectedStock}"
-                               Style="{DynamicResource ModernDataGridStyle}"
-                               CellStyle="{DynamicResource ModernDataGridCellStyle}"
-                               ColumnHeaderStyle="{DynamicResource ModernDataGridColumnHeaderStyle}"
-                               RowStyle="{DynamicResource ModernDataGridRowStyle}"
-                               ItemsSource="{Binding Stocks, Mode=OneWay}">
-
-                    </DataGrid>
-                </StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <TextBlock Text="Корзина"
+                                   FontSize="18"
+                                   Style="{DynamicResource ModernTextBlock}"/>
+                        <Button Content="Продать" 
+                                 VerticalAlignment="Center"
+                                 HorizontalAlignment="Right"
+                                 Style="{DynamicResource IconTextButtonStyle}"
+                                 Tag="{DynamicResource buy}"
+                                 Margin="15 5"
+                                 Padding="3.5"
+                                Click="Button_Sale_Click"/>
+                        <!--Command="{Binding SaleProductsCommand}"-->
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <DataGrid x:Name="BacketDataGrid"
+                                   SelectedItem="{Binding SelectedBacketStock}"
+                                   Style="{DynamicResource ModernDataGridStyle}"
+                                   CellStyle="{DynamicResource ModernDataGridCellStyle}"
+                                   ColumnHeaderStyle="{DynamicResource ModernDataGridColumnHeaderStyle}"
+                                   RowStyle="{DynamicResource ModernDataGridRowStyle}"
+                                   ItemsSource="{Binding Path=BacketStocks, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Продукт" 
+                                IsReadOnly="True" 
+                                Width="*"
+                                Binding="{Binding Product.Name}"/>
+                                <DataGridTextColumn Header="Доступно (шт)" 
+                                IsReadOnly="True" 
+                                Width="120"
+                                Binding="{Binding Quantity}"/>
+                                <DataGridTextColumn Header="Цена" 
+                                IsReadOnly="True" 
+                                Width="85"
+                                Binding="{Binding Product.Price}"/>
+                                <DataGridTemplateColumn Header=""
+                                    IsReadOnly="True"
+                                    CanUserResize="False" 
+                                    Width="Auto">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <Button 
+                                                        Height="25" Width="25"
+                                                        Padding="0"
+                                                        Margin="5 0 0 0"
+                                                        HorizontalContentAlignment="Center"
+                                                        Style="{DynamicResource SolidButtonStyle}"
+                                                        Click="ButtonAddQuantityProduct_Click">
+                                                    <Icon:PackIconMaterial Kind="PlusBox"/>
+                                                </Button>
+                                                <Button
+                                                        Height="25" Width="25"
+                                                        Padding="0"
+                                                        Margin="5 0 0 0"
+                                                        HorizontalContentAlignment="Center"
+                                                        Style="{DynamicResource SolidButtonStyle}"
+                                                        Click="ButtonRemoveProduct_Click">
+                                                    <Icon:PackIconMaterial Kind="DeleteOutline"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Grid>
             </Border>
             <!--Backet-->
         </Grid>

@@ -10,6 +10,9 @@
     <Compile Update="MVVM\View\DialogViews\AuthorizationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MVVM\View\DialogViews\CheckView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MVVM\View\DialogViews\CustomMessageBoxView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +52,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\DialogViews\AuthorizationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\DialogViews\CheckView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\DialogViews\CustomMessageBoxView.xaml">

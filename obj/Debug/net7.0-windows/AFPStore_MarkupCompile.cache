@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 D:\Projects\AFPStore\App.xaml
-18-1076315370
+19-1036852742
 
-28626144852
+301719598603
 229913281646
-Icons\Icons.xaml;MainWindow.xaml;MVVM\View\DialogViews\AuthorizationView.xaml;MVVM\View\DialogViews\CustomMessageBoxView.xaml;MVVM\View\DialogViews\CustomMessageBoxWithOnlyOKView.xaml;MVVM\View\DialogViews\ParameterView.xaml;MVVM\View\DialogViews\ProductView.xaml;MVVM\View\DialogViews\RoleView.xaml;MVVM\View\DialogViews\UserProfileView.xaml;MVVM\View\OptionsView.xaml;MVVM\View\OrdersView.xaml;MVVM\View\SalesView.xaml;MVVM\View\StorageView.xaml;Styles\DataGridStyle.xaml;Styles\MenuButtonStyle.xaml;Styles\OtherButtonStyle.xaml;Styles\TextBoxStyle.xaml;Themes\LightTheme.xaml;
+Icons\Icons.xaml;MainWindow.xaml;MVVM\View\DialogViews\AuthorizationView.xaml;MVVM\View\DialogViews\CheckView.xaml;MVVM\View\DialogViews\CustomMessageBoxView.xaml;MVVM\View\DialogViews\CustomMessageBoxWithOnlyOKView.xaml;MVVM\View\DialogViews\ParameterView.xaml;MVVM\View\DialogViews\ProductView.xaml;MVVM\View\DialogViews\RoleView.xaml;MVVM\View\DialogViews\UserProfileView.xaml;MVVM\View\OptionsView.xaml;MVVM\View\OrdersView.xaml;MVVM\View\SalesView.xaml;MVVM\View\StorageView.xaml;Styles\DataGridStyle.xaml;Styles\MenuButtonStyle.xaml;Styles\OtherButtonStyle.xaml;Styles\TextBoxStyle.xaml;Themes\LightTheme.xaml;
 
 False
 

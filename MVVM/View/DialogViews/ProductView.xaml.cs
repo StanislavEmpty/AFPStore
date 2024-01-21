@@ -24,8 +24,9 @@ namespace AFPStore.MVVM.View.DialogViews
     public partial class ProductView : Window
     {
         public Dictionary<string,string>? Parameters { get; set; }
+        public KeyValuePair<string,string> SelectedPair { get; set; }
         public Stock Stock { get; set; }
-        public ProductView(Stock stock)
+        public ProductView(Stock stock, bool IsReadOnly)
         {
             InitializeComponent();
             Stock = stock;
@@ -45,12 +46,25 @@ namespace AFPStore.MVVM.View.DialogViews
                 ParamsDataGrid.DataContext = Parameters;
                 ParamsDataGrid.ItemsSource = Parameters;
             }
+            if(IsReadOnly)
+            {
+                TbName.IsReadOnly = true;
+                TbPrice.IsReadOnly = true;
+                TbQuantity.IsReadOnly = true;
+                BtnSave.Visibility = Visibility.Hidden;
+                BtnSave.IsEnabled = false;
+                BtnCreateParam.Visibility = Visibility.Hidden;
+                BtnCreateParam.IsEnabled = false;
+                ParamsDataGrid.Columns.Last().Visibility = Visibility.Hidden;
+            }
         }
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
         {
+            if (ParamsDataGrid.IsReadOnly)
+                return;
             if (ParamsDataGrid.SelectedItem is KeyValuePair<string,string>  pair) 
             {
-                Parameters.Remove(pair.Key);
+                Parameters?.Remove(pair.Key);
                 ParamsDataGrid.ItemsSource = null;
                 ParamsDataGrid.ItemsSource = Parameters;
             }
