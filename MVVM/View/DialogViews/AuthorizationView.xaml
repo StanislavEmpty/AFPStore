@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:core="clr-namespace:AFPStore.Core"
         xmlns:local="clr-namespace:AFPStore.MVVM.View.DialogViews"
         mc:Ignorable="d"
         Height="300" Width="400"
@@ -45,7 +46,8 @@
                 <TextBox x:Name="TbPassword"
                          HorizontalAlignment="Center"
                          Margin="10 0"
-                         Style="{DynamicResource ModernTextBox}"/>
+                         Style="{DynamicResource ModernPasswordBox}"
+                         KeyDown="TextBox_KeyDown"/>
             </StackPanel>
             <Button Content="Авторизоваться" 
                     x:Name="BtnOK"

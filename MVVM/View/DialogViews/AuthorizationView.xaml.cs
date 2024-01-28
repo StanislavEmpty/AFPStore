@@ -34,22 +34,7 @@ namespace AFPStore.MVVM.View.DialogViews
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            string login = TbLogin.Text;
-            string password = TbPassword.Text;
-            using StoreDbContext db = new();
-            var user = db.Users.Include("Profile").Where(o => o.Login == login && o.Password == password).FirstOrDefault();
-            if(user != null)
-            {
-                Profile = user.Profile;
-                Profile.Role = db.Roles.Where(o=>o.Id == Profile.RoleId).First();
-                DialogResult = true;
-                Close();
-            }
-            else
-            {
-                CustomMessageBoxWithOnlyOKView dialog = new("Неверное имя пользователя или пароль!");
-                dialog.ShowDialog();
-            }
+            Login();
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -70,9 +55,28 @@ namespace AFPStore.MVVM.View.DialogViews
                     }
                     else
                     {
-                        BtnOK.Focus();
+                        Login();
                     }
                 }
+            }
+        }
+        private void Login()
+        {
+            string login = TbLogin.Text;
+            string password = TbPassword.Text;
+            using StoreDbContext db = new();
+            var user = db.Users.Include("Profile").Where(o => o.Login == login && o.Password == password).FirstOrDefault();
+            if (user != null)
+            {
+                Profile = user.Profile;
+                Profile.Role = db.Roles.Where(o => o.Id == Profile.RoleId).First();
+                DialogResult = true;
+                Close();
+            }
+            else
+            {
+                CustomMessageBoxWithOnlyOKView dialog = new("Неверное имя пользователя или пароль!");
+                dialog.ShowDialog();
             }
         }
     }

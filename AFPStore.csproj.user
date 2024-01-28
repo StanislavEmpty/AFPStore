@@ -31,6 +31,12 @@
     <Compile Update="MVVM\View\DialogViews\UserProfileView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MVVM\View\LiveChartsViews\CartesianChartView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\View\LiveChartsViews\PieChartView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MVVM\View\OptionsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -73,6 +79,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\DialogViews\UserProfileView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\LiveChartsViews\CartesianChartView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\LiveChartsViews\PieChartView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\OptionsView.xaml">

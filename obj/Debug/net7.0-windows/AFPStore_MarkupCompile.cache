@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 D:\Projects\AFPStore\App.xaml
-19-1036852742
+21-262166181
 
-31-978653501
-2621902580908
-Icons\Icons.xaml;MainWindow.xaml;MVVM\View\DialogViews\AuthorizationView.xaml;MVVM\View\DialogViews\CheckView.xaml;MVVM\View\DialogViews\CustomMessageBoxView.xaml;MVVM\View\DialogViews\CustomMessageBoxWithOnlyOKView.xaml;MVVM\View\DialogViews\ParameterView.xaml;MVVM\View\DialogViews\ProductView.xaml;MVVM\View\DialogViews\RoleView.xaml;MVVM\View\DialogViews\UserProfileView.xaml;MVVM\View\OptionsView.xaml;MVVM\View\OrdersView.xaml;MVVM\View\SalesView.xaml;MVVM\View\StorageView.xaml;Styles\DataGridStyle.xaml;Styles\MenuButtonStyle.xaml;Styles\OtherButtonStyle.xaml;Styles\TextBoxStyle.xaml;Themes\LightTheme.xaml;
+341312925574
+2641937400744
+Icons\Icons.xaml;MainWindow.xaml;MVVM\View\DialogViews\AuthorizationView.xaml;MVVM\View\DialogViews\CheckView.xaml;MVVM\View\DialogViews\CustomMessageBoxView.xaml;MVVM\View\DialogViews\CustomMessageBoxWithOnlyOKView.xaml;MVVM\View\DialogViews\ParameterView.xaml;MVVM\View\DialogViews\ProductView.xaml;MVVM\View\DialogViews\RoleView.xaml;MVVM\View\DialogViews\UserProfileView.xaml;MVVM\View\LiveChartsViews\CartesianChartView.xaml;MVVM\View\LiveChartsViews\PieChartView.xaml;MVVM\View\OptionsView.xaml;MVVM\View\OrdersView.xaml;MVVM\View\SalesView.xaml;MVVM\View\StorageView.xaml;Styles\DataGridStyle.xaml;Styles\MenuButtonStyle.xaml;Styles\OtherButtonStyle.xaml;Styles\TextBoxStyle.xaml;Themes\LightTheme.xaml;
 
 False
 

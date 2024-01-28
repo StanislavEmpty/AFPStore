@@ -41,7 +41,8 @@
                       Style="{DynamicResource ModernSearchTextBox}"
                       TextChanged="SearchBox_TextChangedAsync"/>
                 </Grid>
-                <DataGrid x:Name="ProdDataGrid"
+                <Grid Height="450">
+                    <DataGrid x:Name="ProdDataGrid"
                            Margin="10 20"
                            SelectedItem="{Binding SelectedStorageStock}"
                            Style="{DynamicResource ModernDataGridStyle}"
@@ -49,50 +50,51 @@
                            ColumnHeaderStyle="{DynamicResource ModernDataGridColumnHeaderStyle}"
                            RowStyle="{DynamicResource ModernDataGridRowStyle}"
                            ItemsSource="{Binding StorageStocks, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Продукт" 
-                                                IsReadOnly="True" 
-                                                Width="*"
-                                                Binding="{Binding Product.Name}"/>
-                        <DataGridTextColumn Header="Доступно (шт)" 
-                                                IsReadOnly="True" 
-                                                Width="120"
-                                                Binding="{Binding Quantity}"/>
-                        <DataGridTextColumn Header="Цена" 
-                                                IsReadOnly="True" 
-                                                Width="85"
-                                                Binding="{Binding Product.Price}"/>
-                        <DataGridTemplateColumn Header=""
-                                                    IsReadOnly="True"
-                                                    CanUserResize="False" 
-                                                    Width="Auto">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Button 
-                                                Height="25" Width="25"
-                                                Padding="0"
-                                                Margin="5 0 0 0"
-                                                HorizontalContentAlignment="Center"
-                                                Style="{DynamicResource SolidButtonStyle}"
-                                                Click="ButtonAddToBacket_Click">
-                                            <Icon:PackIconMaterial Kind="PlusBox"/>
-                                        </Button>
-                                        <Button
-                                                Height="25" Width="25"
-                                                Padding="0"
-                                                Margin="5 0 0 0"
-                                                HorizontalContentAlignment="Center"
-                                                Style="{DynamicResource SolidButtonStyle}"
-                                                Click="ButtonShowProduct_Click">
-                                            <Icon:PackIconMaterial Kind="OpenInNew"/>
-                                        </Button>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Продукт" 
+                                                    IsReadOnly="True" 
+                                                    Width="*"
+                                                    Binding="{Binding Product.Name}"/>
+                            <DataGridTextColumn Header="Доступно (шт)" 
+                                                    IsReadOnly="True" 
+                                                    Width="120"
+                                                    Binding="{Binding Quantity}"/>
+                            <DataGridTextColumn Header="Цена" 
+                                                    IsReadOnly="True" 
+                                                    Width="85"
+                                                    Binding="{Binding Product.Price}"/>
+                            <DataGridTemplateColumn Header=""
+                                                        IsReadOnly="True"
+                                                        CanUserResize="False" 
+                                                        Width="Auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Button 
+                                                    Height="25" Width="25"
+                                                    Padding="0"
+                                                    Margin="5 0 0 0"
+                                                    HorizontalContentAlignment="Center"
+                                                    Style="{DynamicResource SolidButtonStyle}"
+                                                    Click="ButtonAddToBacket_Click">
+                                                <Icon:PackIconMaterial Kind="PlusBox"/>
+                                            </Button>
+                                            <Button
+                                                    Height="25" Width="25"
+                                                    Padding="0"
+                                                    Margin="5 0 0 0"
+                                                    HorizontalContentAlignment="Center"
+                                                    Style="{DynamicResource SolidButtonStyle}"
+                                                    Click="ButtonShowProduct_Click">
+                                                <Icon:PackIconMaterial Kind="OpenInNew"/>
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
             </StackPanel>
             <!--Storage-->
 

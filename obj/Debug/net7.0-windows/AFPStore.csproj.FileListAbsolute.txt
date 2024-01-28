@@ -125,3 +125,10 @@ D:\Projects\AFPStore\obj\Debug\net7.0-windows\AFPStore.GeneratedMSBuildEditorCon
 D:\Projects\AFPStore\bin\Debug\net7.0-windows\DocumentFormat.OpenXml.dll
 D:\Projects\AFPStore\bin\Debug\net7.0-windows\DocumentFormat.OpenXml.Framework.dll
 D:\Projects\AFPStore\bin\Debug\net7.0-windows\System.IO.Packaging.dll
+D:\Projects\AFPStore\bin\Debug\net7.0-windows\LiveCharts.dll
+D:\Projects\AFPStore\bin\Debug\net7.0-windows\LiveCharts.Wpf.dll
+D:\Projects\AFPStore\obj\Debug\net7.0-windows\AFPStore.sourcelink.json
+D:\Projects\AFPStore\obj\Debug\net7.0-windows\MVVM\View\LiveChartsViews\CartesianChartView.g.cs
+D:\Projects\AFPStore\obj\Debug\net7.0-windows\MVVM\View\LiveChartsViews\CartesianChartView.baml
+D:\Projects\AFPStore\obj\Debug\net7.0-windows\MVVM\View\LiveChartsViews\PieChartView.g.cs
+D:\Projects\AFPStore\obj\Debug\net7.0-windows\MVVM\View\LiveChartsViews\PieChartView.baml
