@@ -44,7 +44,11 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "dependencies": {
-            "MahApps.Metro.IconPacks.Material": {
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "MahApps.Metro.IconPacks": {
               "target": "Package",
               "version": "[4.11.0, )"
             },

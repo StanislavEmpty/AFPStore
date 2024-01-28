@@ -1,5 +1,8 @@
-﻿using System;
+﻿using AFPStore.MVVM.Model.Main;
+using AFPStore.MVVM.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +22,24 @@ namespace AFPStore.MVVM.View.DialogViews
     /// </summary>
     public partial class CheckView : Window
     {
-        public CheckView()
+        CheckViewModel viewModel;
+        public CheckView(ObservableCollection<Sale> sales)
         {
             InitializeComponent();
+            viewModel = new()
+            {
+                Sales = sales
+            };
+            foreach (var item in viewModel.Sales)
+            {
+                viewModel.AllSum += item.TotalPrice;
+            }
+            DataContext = viewModel;
+        }
+
+        private void Button_Return_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

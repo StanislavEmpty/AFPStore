@@ -67,6 +67,7 @@ namespace AFPStore.MVVM.View.DialogViews
                 Parameters?.Remove(pair.Key);
                 ParamsDataGrid.ItemsSource = null;
                 ParamsDataGrid.ItemsSource = Parameters;
+                ParamsDataGrid.Items.Refresh();
             }
         }
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
@@ -94,8 +95,6 @@ namespace AFPStore.MVVM.View.DialogViews
 
         private void ButtonAddParams_Click(object sender, RoutedEventArgs e)
         {
-            ParamsDataGrid.ItemsSource = null;
-            ParamsDataGrid.ItemsSource = Parameters;
             ParameterView view = new();
             if(view.ShowDialog() == true)
             {

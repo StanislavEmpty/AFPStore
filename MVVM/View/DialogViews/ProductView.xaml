@@ -88,6 +88,7 @@
                            CellStyle="{DynamicResource ModernDataGridCellStyle}"
                            ColumnHeaderStyle="{DynamicResource ModernDataGridColumnHeaderStyle}"
                            RowStyle="{DynamicResource ModernDataGridRowStyle}"
+                          ItemsSource="{Binding Parameters, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                           SelectedItem="{Binding SelectedPair, UpdateSourceTrigger=PropertyChanged}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Name" 

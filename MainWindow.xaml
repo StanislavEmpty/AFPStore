@@ -12,7 +12,8 @@
         Background="Transparent"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded"
+        WindowState="Maximized">
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>

@@ -139,6 +139,12 @@ namespace AFPStore.MVVM.ViewModel
             {
                 return saleProductsCommand ??= new RelayCommand((o) =>
                 {
+                    if(backetStocks.Count == 0)
+                    {
+                        new CustomMessageBoxWithOnlyOKView("Нет товаров в корзине!").ShowDialog();
+                        return;
+                    }
+                    ObservableCollection<Sale> sales = new();
                     DateTime now = DateTime.Now;
                     using StoreDbContext db = new();
                     foreach(var stock in BacketStocks)
@@ -152,6 +158,7 @@ namespace AFPStore.MVVM.ViewModel
                         sale.SaleDate = now;
                         db.Sales.Add(sale);
                         db.SaveChanges();
+                        sales.Add(sale);
                         var stockStorage = db.Stocks.Where(o=>o.Product.Name == stock.Product.Name).FirstOrDefault();
                         if (stockStorage != null)
                         {
@@ -163,11 +170,11 @@ namespace AFPStore.MVVM.ViewModel
                     BacketStocks = new();
                     db.Stocks.Where(o => o.Quantity > 0).Include(s => s.Product).OrderBy(o => o.Product.Name).Load();
                     StorageStocks = db.Stocks.Local.ToObservableCollection();
-                    CustomMessageBoxView view = new("Расспечатать чек?");
+                    CustomMessageBoxView view = new("Показать список купленных товаров?");
                     if(view.ShowDialog() == true)
                     {
-                        //если да, то сформировать печатную форму и показать её
-
+                        CheckView checkView = new(sales);
+                        checkView.ShowDialog();
                     }
                 });
             }

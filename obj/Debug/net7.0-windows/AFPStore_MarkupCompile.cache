@@ -12,8 +12,8 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 D:\Projects\AFPStore\App.xaml
 19-1036852742
 
-301719598603
-229913281646
+31-978653501
+2621902580908
 Icons\Icons.xaml;MainWindow.xaml;MVVM\View\DialogViews\AuthorizationView.xaml;MVVM\View\DialogViews\CheckView.xaml;MVVM\View\DialogViews\CustomMessageBoxView.xaml;MVVM\View\DialogViews\CustomMessageBoxWithOnlyOKView.xaml;MVVM\View\DialogViews\ParameterView.xaml;MVVM\View\DialogViews\ProductView.xaml;MVVM\View\DialogViews\RoleView.xaml;MVVM\View\DialogViews\UserProfileView.xaml;MVVM\View\OptionsView.xaml;MVVM\View\OrdersView.xaml;MVVM\View\SalesView.xaml;MVVM\View\StorageView.xaml;Styles\DataGridStyle.xaml;Styles\MenuButtonStyle.xaml;Styles\OtherButtonStyle.xaml;Styles\TextBoxStyle.xaml;Themes\LightTheme.xaml;
 
 False

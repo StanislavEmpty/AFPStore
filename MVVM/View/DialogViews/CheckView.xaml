@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:viewModel="clr-namespace:AFPStore.MVVM.ViewModel"
         xmlns:local="clr-namespace:AFPStore.MVVM.View.DialogViews"
         mc:Ignorable="d"
         Height="400" Width="600"
@@ -11,11 +13,15 @@
         Background="Transparent"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewModel:CheckViewModel/>
+    </Window.DataContext>
     <Border CornerRadius="20" Background="#0F4C75" BorderBrush="{DynamicResource PrimaryGrayColor}" BorderThickness="4">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*"/>
                 <RowDefinition/>
+                <RowDefinition Height="0.1*"/>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal">
                 <Button Content="Назад"
@@ -23,18 +29,64 @@
                         Tag="{DynamicResource cancel}"
                         Style="{DynamicResource IconTextButtonStyle}"
                         Margin="10 0"
-                        Padding="5"/>
+                        Padding="5"
+                        Click="Button_Return_Click"/>
+                <TextBlock Text="Купленные товары" 
+                           Margin="20 0 0 0"
+                            Style="{DynamicResource ModernTextBlock}"/>
+                <Button Content="Сохранить в файл"
+                        VerticalAlignment="Center"
+                        Tag="{DynamicResource saveTofile}"
+                        Style="{DynamicResource IconCustomButtonStyle}"
+                        Margin="110 0 0 0"
+                        Padding="8"
+                        Command="{Binding SaveToFileCommand}"/>
             </StackPanel>
             <Grid Grid.Row="1">
                 <Border CornerRadius="20" 
                         Background="Transparent" 
                         BorderBrush="{DynamicResource SecundaryBackgroundColor}" 
-                        BorderThickness="4">
-                    <Grid>
-                        
+                        BorderThickness="4"
+                        Margin="10 0">
+                    <Grid Margin="10 5">
+                        <DataGrid x:Name="ProdDataGrid"
+                                       Margin="10 20"
+                                       Style="{DynamicResource ModernDataGridStyle}"
+                                       CellStyle="{DynamicResource ModernDataGridCellStyle}"
+                                       ColumnHeaderStyle="{DynamicResource ModernDataGridColumnHeaderStyle}"
+                                       RowStyle="{DynamicResource ModernDataGridRowStyle}"
+                                       ItemsSource="{Binding Sales, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Продукт" 
+                                                    IsReadOnly="True" 
+                                                    Width="*"
+                                                    Binding="{Binding Product.Name}"/>
+                                <DataGridTextColumn Header="Количество" 
+                                                    IsReadOnly="True" 
+                                                    Width="120"
+                                                    Binding="{Binding Quantity}"/>
+                                <DataGridTextColumn Header="Цена" 
+                                                    IsReadOnly="True" 
+                                                    Width="85"
+                                                    Binding="{Binding Product.Price}"/>
+                                <DataGridTextColumn Header="Сумма" 
+                                                    IsReadOnly="True" 
+                                                    Width="85"
+                                                    Binding="{Binding TotalPrice}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </Grid>
                 </Border>
             </Grid>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right"
+                        Margin="30 0">
+                <TextBlock Text="Общая сумма:" 
+                           FontSize="14"
+                           Style="{DynamicResource ModernTextBlock}"/>
+                <TextBlock Text="{Binding AllSum}"
+                           FontSize="14"
+                           Style="{DynamicResource ModernTextBlock}"/>
+            </StackPanel>
         </Grid>
     </Border>
 </Window>

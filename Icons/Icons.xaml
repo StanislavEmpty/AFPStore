@@ -15,11 +15,12 @@
     <Icon:PackIconMaterialKind x:Key="user">Human</Icon:PackIconMaterialKind>
     <Icon:PackIconMaterialKind x:Key="open">OpenInNew</Icon:PackIconMaterialKind>
     <Icon:PackIconMaterialKind x:Key="buy">CartOutline</Icon:PackIconMaterialKind>
+    <Icon:PackIconMaterialKind x:Key="saveTofile">DownloadCircle</Icon:PackIconMaterialKind>
     
     
    <!-- Minimize Icon-->
     <PathGeometry x:Key="minimize" Figures="M19 13H5a1 1 0 0 1 0-2h14a1 1 0 0 1 0 2z"/>
 
-    <Icon:PackIconMaterial x:Key="test" Kind="CartOutline"/>
+    <Icon:PackIconMaterial x:Key="test" Kind="DownloadCircle"/>
 
 </ResourceDictionary>
