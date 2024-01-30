@@ -113,7 +113,7 @@ namespace AFPStore.MVVM.View.DialogViews {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AFPStore;component/mvvm/view/dialogviews/productview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AFPStore;V1.0.0.0;component/mvvm/view/dialogviews/productview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\MVVM\View\DialogViews\ProductView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

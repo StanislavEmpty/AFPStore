@@ -13,7 +13,8 @@
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         Loaded="Window_Loaded"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        Title="Самый лучший рабочий стол кассира">
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
