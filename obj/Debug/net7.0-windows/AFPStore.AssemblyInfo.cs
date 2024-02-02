@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AFPStore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+018002c57920ce43c2170b0f2bb90a939958a0c7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd4ba1d942a9a0604d0168a60ca7412ce5834827")]
 [assembly: System.Reflection.AssemblyProductAttribute("AFPStore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AFPStore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

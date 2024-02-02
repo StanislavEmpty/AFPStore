@@ -10,6 +10,7 @@
          ResizeMode="NoResize"
          Background="Transparent"
          AllowsTransparency="True"
+         Title="Пользователь"
          WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Border CornerRadius="20" Background="#0F4C75" BorderBrush="{DynamicResource PrimaryGrayColor}" BorderThickness="4">
         <Grid>

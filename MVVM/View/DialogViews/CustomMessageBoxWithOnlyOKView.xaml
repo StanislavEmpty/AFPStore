@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AFPStore.MVVM.View.DialogViews"
         mc:Ignorable="d"
-            Height="150" Width="300"
-    WindowStyle="None"
-    ResizeMode="NoResize"
-    Background="Transparent"
-    AllowsTransparency="True"
-    WindowStartupLocation="CenterScreen">
+        Height="150" Width="300"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        Title="Сообщение">
     <Border CornerRadius="20" Background="#0F4C75" BorderBrush="{DynamicResource PrimaryGrayColor}" BorderThickness="4"
         MouseDown="Border_MouseDown">
         <Grid Margin="20">

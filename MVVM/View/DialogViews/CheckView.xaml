@@ -12,7 +12,8 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Title="Список покупок">
     <Window.DataContext>
         <viewModel:CheckViewModel/>
     </Window.DataContext>

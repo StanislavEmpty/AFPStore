@@ -11,11 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Images\logo.ico" />
+    <Compile Remove="Fonts\**" />
+    <EmbeddedResource Remove="Fonts\**" />
+    <None Remove="Fonts\**" />
+    <Page Remove="Fonts\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Fonts\" />
+    <Content Include="Images\logo.ico" />
   </ItemGroup>
 
   <ItemGroup>

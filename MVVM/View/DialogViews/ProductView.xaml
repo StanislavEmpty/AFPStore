@@ -13,7 +13,8 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Title="Продукт">
     <Window.Resources>
         <Core:DateTimeConverter x:Key="DateTimeConverter"/>
     </Window.Resources>

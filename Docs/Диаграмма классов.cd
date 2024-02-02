@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AFPStore.MVVM.ViewModel.CheckViewModel">
+    <Position X="3.75" Y="7.5" Width="3" />
+    <InheritanceLine Type="AFPStore.Core.ObservableObject" FixedFromPoint="true">
+      <Path>
+        <Point X="11.625" Y="10.305" />
+        <Point X="11.625" Y="10.973" />
+        <Point X="5.25" Y="10.973" />
+        <Point X="5.25" Y="10.598" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAABAAAAAAFAAAABAAAAAAIAAAACAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\ViewModel\CheckViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AFPStore.MVVM.ViewModel.MainViewModel">
+    <Position X="7.25" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAEgABAQAAAAAACAAoAAABAgAAA=</HashCode>
+      <FileName>MVVM\ViewModel\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AFPStore.MVVM.ViewModel.OptionsViewModel">
+    <Position X="5" Y="11.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAgAAAAIiJAgALAQIAAwQAAACEAAAAABAAAAg=</HashCode>
+      <FileName>MVVM\ViewModel\OptionsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AFPStore.MVVM.ViewModel.OrdersViewModel">
+    <Position X="0.75" Y="7.5" Width="2.75" />
+    <InheritanceLine Type="AFPStore.Core.ObservableObject" FixedFromPoint="true">
+      <Path>
+        <Point X="11.562" Y="10.305" />
+        <Point X="11.562" Y="10.973" />
+        <Point X="2.125" Y="10.973" />
+        <Point X="2.125" Y="10.405" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAIAAAAAAAAAAgAAEAAAAAAAAAACAAAAAIAA=</HashCode>
+      <FileName>MVVM\ViewModel\OrdersViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AFPStore.MVVM.ViewModel.SalesViewModel">
+    <Position X="0.5" Y="11.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>IAGAAQgAgACIAgAAgEAAAAAAgAkAAAAgAEEAIAAAAAA=</HashCode>
+      <FileName>MVVM\ViewModel\SalesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AFPStore.MVVM.ViewModel.StorageViewModel">
+    <Position X="9.5" Y="11.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAEQACIAEAggAIAIAACAAAAAgAAAA=</HashCode>
+      <FileName>MVVM\ViewModel\StorageViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AFPStore.MVVM.Model.Main.Product">
+    <Position X="19" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="AFPStore.Core.ObservableObject" FixedFromPoint="true">
+      <Path>
+        <Point X="12.75" Y="9.562" />
+        <Point X="13.125" Y="9.562" />
+        <Point X="13.125" Y="8.579" />
+        <Point X="19.75" Y="8.579" />
+        <Point X="19.75" Y="8.165" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAQIAAAAAAAAABAQAgAAEAAAAAIAAAgCAAAA=</HashCode>
+      <FileName>MVVM\Model\Main\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AFPStore.MVVM.Model.Main.Role">
+    <Position X="14.5" Y="9.5" Width="1.5" />
+    <InheritanceLine Type="AFPStore.Core.ObservableObject" FixedFromPoint="true">
+      <Path>
+        <Point X="12.75" Y="9.375" />
+        <Point X="13.125" Y="9.375" />
+        <Point X="13.125" Y="10.47" />
+        <Point X="14.5" Y="10.47" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\Model\Main\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AFPStore.MVVM.Model.Main.Sale">
+    <Position X="16.75" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EQACABAAAAAAAAAAAAAAAABAAAAAQACAAAAAgAEAAAA=</HashCode>
+      <FileName>MVVM\Model\Main\Sale.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AFPStore.MVVM.Model.Main.Stock">
+    <Position X="14.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACABAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAA=</HashCode>
+      <FileName>MVVM\Model\Main\Stock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AFPStore.MVVM.Model.Main.StoreDbContext">
+    <Position X="21.5" Y="7.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAYAAAAAAAAAABAAAkgQAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>MVVM\Model\Main\StoreDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AFPStore.MVVM.Model.Main.User">
+    <Position X="19" Y="9.5" Width="1.75" />
+    <InheritanceLine Type="AFPStore.Core.ObservableObject" FixedFromPoint="true">
+      <Path>
+        <Point X="12.75" Y="9.312" />
+        <Point X="13.042" Y="9.312" Type="JumpStart" />
+        <Point X="13.208" Y="9.312" Type="JumpEnd" />
+        <Point X="19.875" Y="9.312" />
+        <Point X="19.875" Y="9.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAACABAQAgAAEAA=</HashCode>
+      <FileName>MVVM\Model\Main\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AFPStore.MVVM.Model.Main.UserProfile">
+    <Position X="16.5" Y="9.5" Width="2" />
+    <InheritanceLine Type="AFPStore.Core.ObservableObject" FixedFromPoint="true">
+      <Path>
+        <Point X="12.75" Y="9.562" />
+        <Point X="13.125" Y="9.562" />
+        <Point X="13.125" Y="9.312" />
+        <Point X="17.5" Y="9.312" />
+        <Point X="17.5" Y="9.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAADAEIAAABCAAAEGAAAAAgAAAAAAAAAAAAACAAAAAg=</HashCode>
+      <FileName>MVVM\Model\Main\UserProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AFPStore.Core.ObservableObject">
+    <Position X="10.5" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\ObservableObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.Core.DateTimeConverter">
+    <Position X="21.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\DateTimeConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.Core.PasswordHelper">
+    <Position X="24.25" Y="12.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAIQAgEBAEAAAAAAIAAABAAAAAAgAAAICA=</HashCode>
+      <FileName>Core\PasswordHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AFPStore.Core.RelayCommand">
+    <Position X="21.25" Y="13.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEACAAQAAECAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MVVM.View.OptionsView">
+    <Position X="8" Y="17.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAQAAAAAAQAAAAIAAAAAAAAAAACAAAgAA=</HashCode>
+      <FileName>MVVM\View\OptionsView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MVVM.View.OrdersView">
+    <Position X="8" Y="21.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\OrdersView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MVVM.View.SalesView">
+    <Position X="0.5" Y="21" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAgAEEAAAAAgEQAAgAAAAAAA=</HashCode>
+      <FileName>MVVM\View\SalesView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MVVM.View.StorageView">
+    <Position X="0.75" Y="18" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAQAAAAAAAAAYAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\StorageView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MainWindow">
+    <Position X="4.25" Y="19.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAACAAAAAEBAAAAgAAAQAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MVVM.View.LiveChartsViews.CartesianChartView">
+    <Position X="10.25" Y="23.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAQAAAACAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\LiveChartsViews\CartesianChartView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MVVM.View.LiveChartsViews.PieChartView">
+    <Position X="12.5" Y="23.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAQAACAAAAYAAAAAQAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\LiveChartsViews\PieChartView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MVVM.View.DialogViews.AuthorizationView">
+    <Position X="12.25" Y="17.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACCBAAAAAAIAAAAAAAAAAAAABAQAAAAAAA=</HashCode>
+      <FileName>MVVM\View\DialogViews\AuthorizationView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MVVM.View.DialogViews.CheckView">
+    <Position X="15" Y="17.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\DialogViews\CheckView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MVVM.View.DialogViews.CustomMessageBoxView">
+    <Position X="18.25" Y="17.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>MVVM\View\DialogViews\CustomMessageBoxView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MVVM.View.DialogViews.CustomMessageBoxWithOnlyOKView">
+    <Position X="21.25" Y="17.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>MVVM\View\DialogViews\CustomMessageBoxWithOnlyOKView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MVVM.View.DialogViews.ParameterView">
+    <Position X="12.25" Y="20.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAgAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\DialogViews\ParameterView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MVVM.View.DialogViews.ProductView">
+    <Position X="15" Y="20" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAEAEAAAAACAAAAAAAgAAABAAAAIAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\DialogViews\ProductView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MVVM.View.DialogViews.RoleView">
+    <Position X="21" Y="20" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAEAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\DialogViews\RoleView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AFPStore.MVVM.View.DialogViews.UserProfileView">
+    <Position X="18.25" Y="20" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAACAAgAAAQABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\DialogViews\UserProfileView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
