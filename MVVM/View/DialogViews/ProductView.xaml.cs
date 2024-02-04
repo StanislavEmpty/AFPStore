@@ -1,5 +1,6 @@
 ﻿using AFPStore.Core;
 using AFPStore.MVVM.Model.Main;
+using DocumentFormat.OpenXml.Spreadsheet;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -65,9 +66,10 @@ namespace AFPStore.MVVM.View.DialogViews
             if (ParamsDataGrid.SelectedItem is KeyValuePair<string,string>  pair) 
             {
                 Parameters?.Remove(pair.Key);
+                Parameters.TryAdd(Uid, pair.Value);
+                Parameters.Remove(Uid);
                 ParamsDataGrid.ItemsSource = null;
                 ParamsDataGrid.ItemsSource = Parameters;
-                ParamsDataGrid.Items.Refresh();
             }
         }
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
